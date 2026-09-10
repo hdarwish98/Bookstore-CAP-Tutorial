@@ -30,6 +30,11 @@ annotate service.Books with @(
                 Value : stock,
                 Label : 'stock',
             },
+            {
+                $Type : 'UI.DataField',
+                Value : currency_code,
+                Label : 'currency_code',
+            },
         ],
     },
     UI.Facets : [
@@ -89,6 +94,11 @@ annotate service.Books with @(
             Label : 'status_code',
             Criticality : status.criticality,
             CriticalityRepresentation : #WithIcon,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : currency_code,
+            Label : 'currency_code',
         },
     ],
     UI.HeaderInfo : {
@@ -180,6 +190,13 @@ annotate service.Chapters with @(
 annotate service.Books with {
     status @(
         Common.Text : status.displayText,
+        Common.Text.@UI.TextArrangement : #TextOnly,
+    )
+};
+
+annotate service.Books with {
+    currency @(
+        Common.Text : currency.symbol,
         Common.Text.@UI.TextArrangement : #TextOnly,
     )
 };
