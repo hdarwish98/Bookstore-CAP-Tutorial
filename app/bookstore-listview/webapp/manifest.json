@@ -126,7 +126,7 @@
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
-              "editableHeaderContent": false,
+              "editableHeaderContent": true,
               "contextPath": "/Books",
               "sectionLayout": "Page",
               "controlConfiguration": {
@@ -134,6 +134,11 @@
                   "tableSettings": {
                     "type": "ResponsiveTable"
                   }
+                }
+              },
+              "content": {
+                "header": {
+                  "visible": true
                 }
               }
             }

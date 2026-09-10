@@ -18,6 +18,18 @@ annotate service.Books with @(
                 Label : 'Price',
                 Value : price,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : status_code,
+                Label : 'status_code',
+                Criticality : status.criticality,
+                CriticalityRepresentation : #WithIcon,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : stock,
+                Label : 'stock',
+            },
         ],
     },
     UI.Facets : [
@@ -65,6 +77,18 @@ annotate service.Books with @(
             $Type : 'UI.DataField',
             Label : 'Price',
             Value : price,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : stock,
+            Label : 'stock',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : status_code,
+            Label : 'status_code',
+            Criticality : status.criticality,
+            CriticalityRepresentation : #WithIcon,
         },
     ],
     UI.HeaderInfo : {
@@ -152,4 +176,11 @@ annotate service.Chapters with @(
         },
     ]
 );
+
+annotate service.Books with {
+    status @(
+        Common.Text : status.displayText,
+        Common.Text.@UI.TextArrangement : #TextOnly,
+    )
+};
 
